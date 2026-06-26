@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chat Café — Lobby</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<header class="app-header">
+  <div class="left-group">
+    <div class="brand"><span class="brand-cup">☕</span> Chat Café</div>
+  </div>
+
+  <div class="right-group">
+    <span class="greeting">Hola, <strong id="greet-username">…</strong></span>
+
+    <div style="position:relative;">
+      <button class="icon-btn" id="btn-users" title="Usuarios conectados" aria-haspopup="true">
+        👥
+        <span class="badge-dot hidden" id="users-count">0</span>
+      </button>
+      <div class="dropdown-panel right" id="panel-users">
+        <div class="panel-title">En el café ahora</div>
+        <div id="users-list"><div class="panel-empty">Conectando…</div></div>
+      </div>
+    </div>
+
+    <div style="position:relative;">
+      <button class="icon-btn" id="btn-notifs" title="Notificaciones" aria-haspopup="true">
+        🔔
+        <span class="badge-dot hidden" id="notif-badge">0</span>
+      </button>
+      <div class="dropdown-panel right" id="panel-notifs">
+        <div class="panel-title">Notificaciones</div>
+        <div id="notif-list"><div class="panel-empty">Sin notificaciones todavía.</div></div>
+      </div>
+    </div>
+
+    <a href="#" class="logout-link" id="btn-logout" title="Cerrar sesión">Salir</a>
+  </div>
+</header>
+
+<main class="lobby-wrap">
+  <div class="lobby-intro">
+    <span class="eyebrow">Elige una mesa</span>
+    <h1>¿En qué te ayudamos hoy?</h1>
+    <p>Cada sala es una conversación distinta. Entra a la que necesites — puedes cambiarte cuando quieras.</p>
+  </div>
+
+  <nav class="room-menu" id="room-menu" aria-label="Salas de chat">
+    <div class="panel-empty">Cargando el menú…</div>
+  </nav>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/notifications.js"></script>
+<script src="/js/lobby.js"></script>
+</body>
+</html>

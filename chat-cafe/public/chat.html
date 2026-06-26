@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chat Café — Sala</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="chat-shell">
+
+  <header class="app-header">
+    <div class="left-group">
+      <a href="/lobby.html" class="back-link" id="btn-back">← Lobby</a>
+      <div class="chat-room-title">
+        <span class="room-icon-sm" id="room-icon">☕</span>
+        <span id="room-name">Cargando…</span>
+        <span class="anon-pill" id="anon-pill" style="display:none;">Anónimo</span>
+      </div>
+    </div>
+
+    <div class="right-group">
+      <button class="icon-btn" id="btn-search" title="Buscar en el historial">🔍</button>
+
+      <div style="position:relative;">
+        <button class="icon-btn" id="btn-users" title="Usuarios conectados" aria-haspopup="true">
+          👥
+          <span class="badge-dot hidden" id="users-count">0</span>
+        </button>
+        <div class="dropdown-panel right" id="panel-users">
+          <div class="panel-title">En el café ahora</div>
+          <div id="users-list"><div class="panel-empty">Conectando…</div></div>
+        </div>
+      </div>
+
+      <div style="position:relative;">
+        <button class="icon-btn" id="btn-notifs" title="Notificaciones" aria-haspopup="true">
+          🔔
+          <span class="badge-dot hidden" id="notif-badge">0</span>
+        </button>
+        <div class="dropdown-panel right" id="panel-notifs">
+          <div class="panel-title">Notificaciones</div>
+          <div id="notif-list"><div class="panel-empty">Sin notificaciones todavía.</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-bar" id="search-bar">
+    <input type="text" id="search-input" placeholder="Buscar palabra en el historial de esta sala…" />
+    <button class="icon-btn" id="btn-search-close" title="Cerrar búsqueda">✕</button>
+  </div>
+
+  <div class="chat-scroll" id="chat-scroll">
+    <div class="scroll-loader" id="scroll-loader">☕ cargando mensajes anteriores…</div>
+    <div class="history-start" id="history-start" style="display:none;">— inicio de la conversación —</div>
+    <!-- los mensajes se insertan aquí dinámicamente -->
+  </div>
+
+  <button class="jump-bottom" id="jump-bottom">↓ Nuevos mensajes</button>
+
+  <div class="composer" id="composer">
+    <div class="staged-file" id="staged-file">
+      <span class="file-icon">📎</span>
+      <span class="file-name" id="staged-file-name">archivo.png</span>
+      <span class="file-size" id="staged-file-size">0 KB</span>
+      <button class="remove-file" id="remove-staged-file" title="Quitar archivo">✕</button>
+    </div>
+
+    <div class="composer-row">
+      <button class="file-btn" id="btn-attach" title="Adjuntar archivo">📎</button>
+      <input type="file" id="file-input" class="visually-hidden" />
+      <textarea id="msg-input" rows="1" placeholder="Escribe un mensaje… (los emojis se escriben desde tu teclado 😊)"></textarea>
+      <button class="send-btn" id="btn-send" title="Enviar">➤</button>
+    </div>
+    <div class="composer-hint" id="composer-hint">también puedes arrastrar un archivo hasta aquí para adjuntarlo</div>
+  </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/notifications.js"></script>
+<script src="/js/chat.js"></script>
+</body>
+</html>

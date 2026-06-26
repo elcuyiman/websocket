@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chat Café — Entrar</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+
+  <!-- Lado izquierdo: hero / "pizarra de menu" -->
+  <section class="auth-hero">
+    <div class="hero-top">
+      <div class="brand"><span class="brand-cup">☕</span> Chat Café</div>
+      <span class="hero-menu-title" style="margin-top:30px; display:block;">Soporte en tiempo real</span>
+      <h1 class="hero-title">Un café virtual para resolver lo que se te atraviesa.</h1>
+      <p class="hero-sub">
+        Regístrate, elige una mesa y conversa en tiempo real con quien también
+        esté conectado. Reporta errores, pide ayuda, busca objetos perdidos o
+        deja una sugerencia anónima.
+      </p>
+    </div>
+
+    <div class="hero-bottom">
+      <span class="hero-menu-title">El menú de hoy</span>
+      <div class="menu-board">
+        <div class="menu-line"><span>🐞 Comunicación de Errores</span><span>SALA 1</span></div>
+        <div class="menu-line"><span>🛠️ Ayuda Técnica</span><span>SALA 2</span></div>
+        <div class="menu-line"><span>🧳 Objetos Perdidos</span><span>SALA 3</span></div>
+        <div class="menu-line"><span>💡 Buzón de Sugerencias (anónimo)</span><span>SALA 4</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lado derecho: formulario -->
+  <section class="auth-panel">
+    <div class="auth-card">
+
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab" id="tab-login" role="tab" aria-selected="true">Iniciar sesión</button>
+        <button class="auth-tab" id="tab-register" role="tab" aria-selected="false">Registrarme</button>
+      </div>
+
+      <!-- Formulario: Iniciar sesión -->
+      <form id="form-login" autocomplete="off">
+        <div class="field">
+          <label for="login-username">Usuario</label>
+          <input id="login-username" name="username" type="text" placeholder="tu nombre de usuario" required />
+        </div>
+        <div class="field">
+          <label for="login-password">Contraseña</label>
+          <input id="login-password" name="password" type="password" placeholder="••••••••" required />
+        </div>
+        <button class="btn-primary" type="submit">Entrar al café</button>
+        <div class="form-msg" id="login-msg"></div>
+      </form>
+
+      <!-- Formulario: Registrarse -->
+      <form id="form-register" autocomplete="off" style="display:none;">
+        <div class="field">
+          <label for="reg-username">Elige un usuario</label>
+          <input id="reg-username" name="username" type="text" placeholder="mínimo 3 caracteres" required minlength="3" />
+        </div>
+        <div class="field">
+          <label for="reg-password">Crea una contraseña</label>
+          <input id="reg-password" name="password" type="password" placeholder="mínimo 4 caracteres" required minlength="4" />
+        </div>
+        <button class="btn-primary" type="submit">Crear mi cuenta</button>
+        <div class="form-msg" id="register-msg"></div>
+      </form>
+
+      <p class="auth-foot-note">Tus datos se guardan en el servidor del laboratorio.<br/>La contraseña se almacena cifrada.</p>
+    </div>
+  </section>
+
+</div>
+
+<script src="/js/auth.js"></script>
+</body>
+</html>
